@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="frame">
+        <section class="panel branding">
+            <span class="badge">Studio Atlas</span>
+            <h1 class="title">Создайте аккаунт и начните работать ясно и спокойно.</h1>
+            <p class="subtitle">Присоединяйтесь к пространству для сфокусированного взаимодействия, отобранных ресурсов и понятного прогресса в каждом проекте.</p>
+            <div class="stats">
+                <div class="stat">
+                    <strong>14k+</strong>
+                    <span>креативных команд подключено</span>
+                </div>
+                <div class="stat">
+                    <strong>96%</strong>
+                    <span>процент сдачи в срок</span>
+                </div>
+                <div class="stat">
+                    <strong>30 дней</strong>
+                    <span>дней сопровождения</span>
+                </div>
+                <div class="stat">
+                    <strong>24/7</strong>
+                    <span>доступ к приоритетной поддержке</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="form-title">
+                <h2>Регистрация</h2>
+                <span class="helper">Займет меньше 2 минут</span>
+            </div>
+            <form>
+                <div class="row">
+                    <div>
+                        <label for="first-name">Имя</label>
+                        <input id="first-name" type="text" placeholder="Алексей" required>
+                    </div>
+                    <div>
+                        <label for="last-name">Фамилия</label>
+                        <input id="last-name" type="text" placeholder="Морозов" required>
+                    </div>
+                </div>
+                <div>
+                    <label for="email">Почта</label>
+                    <input id="email" type="email" placeholder="alex@studio.com" required>
+                </div>
+                <div class="row">
+                    <div>
+                        <label for="role">Роль</label>
+                        <select id="role" required>
+                            <option value="" disabled selected>Выберите роль</option>
+                            <option>Основатель</option>
+                            <option>Продуктовый дизайнер</option>
+                            <option>Инженер</option>
+                            <option>Маркетинг</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="team">Размер команды</label>
+                        <select id="team" required>
+                            <option value="" disabled selected>Выберите размер</option>
+                            <option>1-5</option>
+                            <option>6-15</option>
+                            <option>16-40</option>
+                            <option>41+</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label for="password">Пароль</label>
+                    <input id="password" type="password" placeholder="Минимум 8 символов" minlength="8" required>
+                </div>
+                <div class="plan">
+                    <button type="button">
+                        <strong>Стартовый</strong>
+                        <span class="helper">Лучше всего для соло-авторов</span>
+                    </button>
+                    <button type="button">
+                        <strong>Командный</strong>
+                        <span class="helper">Общие пространства для растущих команд</span>
+                    </button>
+                </div>
+                <label class="terms">
+                    <input type="checkbox" required>
+                    <span>Я согласен(на) с условиями использования и политикой конфиденциальности.</span>
+                </label>
+                <div class="actions">
+                    <button class="primary" type="submit">Создать аккаунт</button>
+                    <button class="ghost" type="button">Войти через Google</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

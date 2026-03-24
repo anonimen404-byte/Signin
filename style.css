@@ -1,0 +1,452 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Space+Grotesk:wght@400;600&display=swap');
+/* Импорт шрифтов с Google Fonts */
+:root {
+/* Корневые CSS-переменные */
+    --bg-1: #f6efe8;
+/* Фоновый оттенок 1 */
+    --bg-2: #f0f7f4;
+/* Фоновый оттенок 2 */
+    --ink: #1c1b1a;
+/* Основной цвет текста */
+    --muted: #6b645f;   
+/* Приглушенный цвет текста */
+    --accent: #d97757;
+/* Основной акцентный цвет */
+    --accent-2: #2a9d8f;
+/* Дополнительный акцент */
+    --card: #fffaf5;
+/* Цвет карточек */
+    --shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+/* Тень для карточек */
+}
+/* Конец блока переменных */
+* {
+/* Универсальный селектор */
+    box-sizing: border-box;
+/* Учет границ в размерах */
+}
+/* Конец универсального блока */
+body {
+/* Базовые стили страницы */
+    margin: 0;
+/* Убираем внешние отступы */
+    min-height: 100vh;
+/* Минимальная высота на весь экран */
+    display: flex;
+/* Гибкий контейнер */
+    align-items: center;
+/* Вертикальное выравнивание */
+    justify-content: center;
+/* Горизонтальное выравнивание */
+    background: radial-gradient(1200px 600px at 10% 10%, #fbe7d5 0%, transparent 55%),
+/* Первый радиальный градиент */
+                radial-gradient(1200px 600px at 90% 80%, #d9f3ef 0%, transparent 55%),
+/* Второй радиальный градиент */
+                linear-gradient(135deg, var(--bg-1), var(--bg-2));
+/* Основной линейный градиент */
+    color: var(--ink);
+/* Цвет текста */
+    font-family: "Space Grotesk", "Segoe UI", sans-serif;
+/* Шрифт страницы */
+    padding: 40px 20px;
+/* Внутренние отступы */
+}
+/* Конец блока body */
+.frame {
+/* Контейнер двух панелей */
+    width: min(980px, 100%);
+/* Максимальная ширина */
+    display: grid;
+/* Сетка */
+    grid-template-columns: minmax(280px, 420px) minmax(280px, 1fr);
+/* Две колонки с ограничениями */
+    gap: 28px;
+/* Расстояние между колонками */
+    align-items: stretch;
+/* Растягивание по высоте */
+    animation: fadeIn 700ms ease forwards;
+/* Анимация появления */
+}
+/* Конец блока frame */
+.panel {
+/* Карточка-панель */
+    background: var(--card);
+/* Фон панели */
+    border-radius: 28px;
+/* Скругление углов */
+    box-shadow: var(--shadow);
+/* Тень */
+    padding: 40px;
+/* Внутренние отступы */
+    position: relative;
+/* Позиционирование для псевдоэлемента */
+    overflow: hidden;
+/* Скрытие вылетающих элементов */
+}
+/* Конец блока panel */
+.panel::after {
+/* Декоративный круг */
+    content: "";
+/* Псевдоэлемент без текста */
+    position: absolute;
+/* Абсолютное позиционирование */
+    width: 180px;
+/* Ширина круга */
+    height: 180px;
+/* Высота круга */
+    border-radius: 50%;
+/* Круглая форма */
+    background: rgba(217, 119, 87, 0.12);
+/* Полупрозрачный акцент */
+    top: -40px;
+/* Смещение вверх */
+    right: -40px;
+/* Смещение вправо */
+}
+/* Конец псевдоэлемента */
+.branding {
+/* Левая колонка */
+    display: flex;
+/* Флекс-контейнер */
+    flex-direction: column;
+/* Вертикальное направление */
+    gap: 20px;
+/* Расстояние между элементами */
+}
+/* Конец блока branding */
+.badge {
+/* Плашка бренда */
+    display: inline-flex;
+/* Строчный флекс */
+    align-items: center;
+/* Вертикальное выравнивание */
+    gap: 8px;
+/* Расстояние между элементами */
+    padding: 6px 14px;
+/* Внутренние отступы */
+    border-radius: 999px;
+/* Полностью округлая форма */
+    background: rgba(42, 157, 143, 0.12);
+/* Фон плашки */
+    color: var(--accent-2);
+/* Цвет текста плашки */
+    font-weight: 600;
+/* Жирность */
+    font-size: 0.85rem;
+/* Размер текста */
+    width: fit-content;
+/* Ширина по содержимому */
+}
+/* Конец блока badge */
+.title {
+/* Заголовок слева */
+    font-family: "Playfair Display", "Times New Roman", serif;
+/* Шрифт заголовка */
+    font-size: clamp(2rem, 3.2vw, 3rem);
+/* Адаптивный размер */
+    margin: 0;
+/* Убираем отступы */
+}
+/* Конец блока title */
+.subtitle {
+/* Подзаголовок */
+    color: var(--muted);
+/* Приглушенный цвет */
+    font-size: 1rem;
+/* Размер текста */
+    line-height: 1.6;
+/* Межстрочный интервал */
+}
+/* Конец блока subtitle */
+.stats {
+/* Сетка статистики */
+    display: grid;
+/* Сетка */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+/* Две колонки */
+    gap: 16px;
+/* Промежутки */
+    margin-top: 24px;
+/* Отступ сверху */
+}
+/* Конец блока stats */
+.stat {
+/* Карточка статистики */
+    background: #ffffff;
+/* Белый фон */
+    border-radius: 16px;
+/* Скругление */
+    padding: 16px;
+/* Внутренние отступы */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+/* Легкая рамка */
+}
+/* Конец блока stat */
+.stat strong {
+/* Число в статистике */
+    display: block;
+/* Перенос на новую строку */
+    font-size: 1.1rem;
+/* Размер числа */
+}
+/* Конец блока stat strong */
+.stat span {
+/* Подпись статистики */
+    color: var(--muted);
+/* Цвет подписи */
+    font-size: 0.85rem;
+/* Размер подписи */
+}
+/* Конец блока stat span */
+.form-title {
+/* Заголовок формы */
+    display: flex;
+/* Флекс-контейнер */
+    align-items: center;
+/* Выравнивание по вертикали */
+    justify-content: space-between;
+/* Разнос по краям */
+    gap: 16px;
+/* Промежуток */
+    margin-bottom: 18px;
+/* Отступ снизу */
+}
+/* Конец блока form-title */
+.form-title h2 {
+/* Заголовок h2 в форме */
+    font-size: 1.5rem;
+/* Размер заголовка */
+    margin: 0;
+/* Убираем отступы */
+}
+/* Конец блока form-title h2 */
+form {
+/* Контейнер формы */
+    display: grid;
+/* Сетка */
+    gap: 16px;
+/* Промежутки */
+}
+/* Конец блока form */
+label {
+/* Подписи полей */
+    font-size: 0.85rem;
+/* Размер подписи */
+    font-weight: 600;
+/* Жирность */
+    margin-bottom: 6px;
+/* Отступ снизу */
+    display: block;
+/* Блочный элемент */
+}
+/* Конец блока label */
+input, select {
+/* Поля ввода и выпадающие списки */
+    width: 100%;
+/* На всю ширину */
+    padding: 12px 14px;
+/* Внутренние отступы */
+    border-radius: 12px;
+/* Скругление */
+    border: 1px solid rgba(0, 0, 0, 0.15);
+/* Рамка */
+    font-size: 1rem;
+/* Размер текста */
+    font-family: inherit;
+/* Наследование шрифта */
+    background: #fff;
+/* Белый фон */
+    transition: border 200ms ease, box-shadow 200ms ease;
+/* Плавные переходы */
+}
+/* Конец блока input, select */
+input:focus, select:focus {
+/* Состояние фокуса */
+    outline: none;
+/* Убираем обводку */
+    border-color: var(--accent);
+/* Акцентная рамка */
+    box-shadow: 0 0 0 3px rgba(217, 119, 87, 0.2);
+/* Подсветка */
+}
+/* Конец блока фокуса */
+.row {
+/* Строка с двумя полями */
+    display: grid;
+/* Сетка */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+/* Две колонки */
+    gap: 12px;
+/* Промежуток */
+}
+/* Конец блока row */
+.helper {
+/* Вспомогательный текст */
+    font-size: 0.8rem;
+/* Размер */
+    color: var(--muted);
+/* Цвет */
+}
+/* Конец блока helper */
+.plan {
+/* Контейнер тарифов */
+    display: grid;
+/* Сетка */
+    gap: 12px;
+/* Промежуток */
+}
+/* Конец блока plan */
+.plan button {
+/* Кнопки тарифов */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+/* Тонкая рамка */
+    background: #fff;
+/* Белый фон */
+    border-radius: 14px;
+/* Скругление */
+    padding: 14px;
+/* Отступы */
+    text-align: left;
+/* Выравнивание текста */
+    cursor: pointer;
+/* Курсор */
+    transition: transform 200ms ease, border 200ms ease;
+/* Переходы */
+}
+/* Конец блока plan button */
+.plan button:hover {
+/* Наведение на тариф */
+    transform: translateY(-2px);
+/* Легкий подъем */
+    border-color: rgba(42, 157, 143, 0.5);
+/* Акцентная рамка */
+}
+/* Конец блока hover */
+.plan button strong {
+/* Название тарифа */
+    display: block;
+/* На отдельной строке */
+    font-size: 1rem;
+/* Размер */
+}
+/* Конец блока plan button strong */
+.actions {
+/* Блок с кнопками */
+    display: grid;
+/* Сетка */
+    gap: 12px;
+/* Промежуток */
+}
+/* Конец блока actions */
+.primary {
+/* Основная кнопка */
+    background: linear-gradient(120deg, var(--accent), #e89f75);
+/* Градиент */
+    color: #fff;
+/* Белый текст */
+    border: none;
+/* Без рамки */
+    padding: 14px;
+/* Отступы */
+    border-radius: 14px;
+/* Скругление */
+    font-size: 1rem;
+/* Размер текста */
+    font-weight: 600;
+/* Жирность */
+    cursor: pointer;
+/* Курсор */
+    transition: transform 200ms ease, box-shadow 200ms ease;
+/* Переходы */
+}
+/* Конец блока primary */
+.primary:hover {
+/* Наведение на основную кнопку */
+    transform: translateY(-2px);
+/* Подъем */
+    box-shadow: 0 14px 30px rgba(217, 119, 87, 0.35);
+/* Тень */
+}
+/* Конец блока primary:hover */
+.ghost {
+/* Вторичная кнопка */
+    border: 1px solid rgba(0, 0, 0, 0.15);
+/* Рамка */
+    background: transparent;
+/* Прозрачный фон */
+    color: var(--ink);
+/* Цвет текста */
+    padding: 12px;
+/* Отступы */
+    border-radius: 14px;
+/* Скругление */
+    font-weight: 600;
+/* Жирность */
+    cursor: pointer;
+/* Курсор */
+}
+/* Конец блока ghost */
+.terms {
+/* Блок с соглашением */
+    display: flex;
+/* Флекс-контейнер */
+    gap: 10px;
+/* Промежуток */
+    align-items: flex-start;
+/* Выравнивание по верхнему краю */
+    font-size: 0.85rem;
+/* Размер текста */
+    color: var(--muted);
+/* Цвет текста */
+}
+/* Конец блока terms */
+.terms input {
+/* Чекбокс */
+    width: auto;
+/* Автоширина */
+    margin-top: 2px;
+/* Сдвиг вниз */
+}
+/* Конец блока terms input */
+@keyframes fadeIn {
+/* Анимация появления */
+    from {
+/* Начальное состояние */
+        opacity: 0;
+/* Прозрачность */
+        transform: translateY(20px);
+/* Смещение вниз */
+    }
+/* Конец from */
+    to {
+/* Конечное состояние */
+        opacity: 1;
+/* Полная видимость */
+        transform: translateY(0);
+/* Возврат в позицию */
+    }
+/* Конец to */
+}
+/* Конец keyframes */
+@media (max-width: 900px) {
+/* Адаптация для узких экранов */
+    .frame {
+/* Контейнер на мобильных */
+        grid-template-columns: 1fr;
+/* Одна колонка */
+    }
+/* Конец .frame в media */
+    .panel {
+/* Панели на мобильных */
+        padding: 32px;
+/* Меньшие отступы */
+    }
+/* Конец .panel в media */
+    .row {
+/* Строки полей на мобильных */
+        grid-template-columns: 1fr;
+/* Одна колонка */
+    }
+/* Конец .row в media */
+}
+/* Конец media */
